@@ -1,0 +1,22 @@
+
+## Setup
+
+```
+git clone https://github.com/vivek-anand-jain/osv.git -b cloudlab-instructions 
+cd osv && git submodule update --init --recursive
+./scripts/setup.py
+```
+
+## Compile an example into OSv
+
+Find the example in apps/ directory. You might have to install some dependecies
+manually. For example, to build golang applications, you have to install golang.
+
+```
+./scripts/build -j`nproc` image=<directory name>
+```
+
+## Run the OSv unikernel image on QEMU-KVM
+```
+./scripts/run.py -p kvm --nogdb --novnc
+```
